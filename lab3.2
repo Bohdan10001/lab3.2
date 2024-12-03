@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	double a, b, c, x, F1, F2;
+
+	cout << " a= ";
+	cin >> a;
+	cout << " b= ";
+	cin >> b;
+	cout << " c= ";
+	cin >> c;
+	cout << " x= ";
+	cin >> x;
+
+	// 1. Реалізація за допомогою скороченої форм розгалуження
+	F1 = (x < 0 && b != 0) ? (a * pow(x, 2) - b * pow(x, 2)) :
+		(x > 0 && b == 0) ? (x - a) / (x - c) :
+		x + 5 / (c * (x - 10));
+
+	// 2. Реалізація за допомогою повної форми розгалуження
+	if (x < 0 && b != 0) {
+		F2 = a * pow(x, 2) - b * pow(x, 2);
+	}
+	else if (x > 0 && b == 0) {
+		F2 = (x - a) / (x - c);
+	}
+	else {
+		F2 = x + 5 / (c * (x - 10));
+	}
+
+	cout << "1 F = " << F1 << endl;
+	cout << "2 F = " << F2 << endl;
+	return 0;
+}
